@@ -3,13 +3,10 @@ module.exports = {
     title: `Don Walizer Jr`,
     author: {
       name: `Don Walizer Jr`,
-      summary: `from Baltimore`,
+      summary: `, a software developer from Baltimore`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `A development blog covering a variety of topics`,
+    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`
   },
   plugins: [
     {
