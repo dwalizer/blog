@@ -1,0 +1,24 @@
+.top-header {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.top-header a:link:hover, .top-header a.visited:hover {
+    text-decoration: none;
+}
+
+.top-header a {
+    text-decoration: none;
+}
+
+.top-header a:link {
+    color: #ffffff;
+}
+
+.top-header a:visited {
+    color: #c0c0c0;
+}
