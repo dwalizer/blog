@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Don Walizer Jr`,
+    title: `Code and Stuff`,
     author: {
       name: `Don Walizer Jr`,
       summary: `, a software developer from Baltimore`,
     },
     description: `A development blog covering a variety of topics`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`
+    siteUrl: `https://www.donwalizerjr.com/`
   },
   plugins: [
     {
