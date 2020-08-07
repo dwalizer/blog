@@ -14,10 +14,10 @@ as far as to reinstall the whole thing.
 
 It turns out, the issue is that I had recently bought a Wi-Fi adapter for my new computer,
 as the built in adapter didn't get a particularly good connection on my network.  After
-connecting the new adapter, I had disabled the on board adapter.  Unity, it seems, doesn't
-like when you do that!  After re-enabling the original adapter (even though I'm not using it),
+connecting the new adapter, I had disabled the on board adapter.  Unity, it seems, **doesn't
+like when you do that!**  After re-enabling the original adapter (even though I'm not using it),
 Unity finally loaded up as it was supposed to.
 
-Evidently, this is an issue that's existed for <a href="https://forum.unity.com/threads/if-the-network-adaptor-changes-lan-to-wi-fi-the-hub-silently-fails-to-launch-unity-instances.580909/">some time</a>.
+Evidently, this is an issue that's existed for [some time](https://forum.unity.com/threads/if-the-network-adaptor-changes-lan-to-wi-fi-the-hub-silently-fails-to-launch-unity-instances.580909/).
 
 Something to keep in mind for the future.
