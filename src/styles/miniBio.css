@@ -1,0 +1,9 @@
+.mini-bio a {
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.mini-bio {
+    display: flex;
+    margin-top: 10px;
+}

@@ -3,6 +3,7 @@ module.exports = {
     title: `Code and Stuff`,
     author: {
       name: `Don Walizer Jr`,
+      nickname: `Don`,
       summary: `, a software developer from Baltimore`,
     },
     description: `A development blog covering a variety of topics`,
@@ -63,7 +64,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

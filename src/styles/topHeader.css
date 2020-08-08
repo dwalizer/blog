@@ -8,11 +8,12 @@
 }
 
 .top-header a:link:hover, .top-header a.visited:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .top-header a {
     text-decoration: none;
+    box-shadow: none !important;
 }
 
 .top-header a:link {
