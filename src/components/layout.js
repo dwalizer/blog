@@ -53,7 +53,8 @@ const Layout = ({ location, title, children }) => {
     <div>
       <div className="top-header">
           <Link to="/">Home</Link>
-          <span style={{float: "right"}}>
+          <span className="floating-links">
+            <a href="https://github.com/dwalizer">GitHub</a>
             <Link to="/about/">About Me</Link>
           </span>
       </div>      

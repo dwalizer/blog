@@ -23,3 +23,11 @@
 .top-header a:visited {
     color: #ffffff;
 }
+
+.floating-links {
+    float: right;
+}
+
+.floating-links > a {
+    margin-left: 15px;
+}
