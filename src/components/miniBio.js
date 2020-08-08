@@ -8,6 +8,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
+import _ from "lodash";
 
 import { rhythm } from "../utils/typography"
 
@@ -41,7 +42,12 @@ const MiniBio = (props) => {
             style={{ marginRight: rhythm(1 / 2), marginBottom: 0, minWidth: 50, borderRadius: `100%` }} />
       </Link>
       <p>
-        by <strong>{author.nickname}</strong> on {props.date}
+        by <strong>{author.nickname}</strong> on {props.date} under
+        {_.map(props.tags, tag =>
+              <span style={{paddingRight: "4px", paddingLeft: "4px"}}>
+                <Link to={"/tags/" + tag}>{tag}</Link>
+              </span>
+        )}
       </p>
     </div>
   )

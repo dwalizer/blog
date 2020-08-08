@@ -2,6 +2,7 @@
 title: Unity mysteriously failing to start
 date: "2020-08-06T14:14:03.284Z"
 description: "Unity apparently doesn't like change, but you have to find that out for yourself."
+tags: ["gaming", "programming"]
 ---
 
 Recently, I was doing some work with Unity.  After closing my session and coming back later,
