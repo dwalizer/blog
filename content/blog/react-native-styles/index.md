@@ -43,7 +43,7 @@ Say you've named this file style.js.  You can then import this into your compone
 You can either import an entire stylesheet, or you can create stylesheets for different components
 and then import just those pieces.  To add to the original style.js file:
 
-        import { StyleSheet } from "react-native";
+    import { StyleSheet } from "react-native";
 
     const buttonStyle = StyleSheet.create({
         button: {
