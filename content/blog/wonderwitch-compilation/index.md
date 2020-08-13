@@ -86,6 +86,7 @@ Let's, instead, go back to basics.  Let's start with a simple Hello World progra
     void main() {
         text_screen_init();
         text_put_string(0, 0, "Hello world!");
+        key_wait();
     }
 
 Now, from our working folder, we'll need to run the command:
