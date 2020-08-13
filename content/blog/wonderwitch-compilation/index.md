@@ -81,13 +81,15 @@ to build our file.
 
 Let's, instead, go back to basics.  Let's start with a simple Hello World program, called hello.c.
 
-    #include <sys/bios.h>
+```c
+#include <sys/bios.h>
 
-    void main() {
-        text_screen_init();
-        text_put_string(0, 0, "Hello world!");
-        key_wait();
-    }
+void main() {
+    text_screen_init();
+    text_put_string(0, 0, "Hello world!");
+    key_wait();
+}
+```
 
 Now, from our working folder, we'll need to run the command:
 
@@ -146,15 +148,17 @@ the WonderWitch, or load it up on the emulator, and execute it.
 And that's it!  We've created, compiled and run our first WonderWitch file.  But that
 command is kind of unwieldy, so let's make a quick makefile to automate this.
 
-    WWITCH=C:\Development\WWitch
+```makefile
+WWITCH=C:\Development\WWitch
 
-    WWITCH_INCLUDES = $(WWITCH)\include
-    WWITCH_LIB = $(WWITCH)\lib
-    LSIC_LIB = $(WWITCH)\lsic86ww\lib\s
+WWITCH_INCLUDES = $(WWITCH)\include
+WWITCH_LIB = $(WWITCH)\lib
+LSIC_LIB = $(WWITCH)\lsic86ww\lib\s
 
-    default:
-        lcc86 -I$(WWITCH_INCLUDES) -L$(WWITCH_LIB) -L$(LSIC_LIB) -o hello.bin hello.c
-        mkfent hello.cf
+default:
+    lcc86 -I$(WWITCH_INCLUDES) -L$(WWITCH_LIB) -L$(LSIC_LIB) -o hello.bin hello.c
+    mkfent hello.cf
+```
 
 This is just a quick and dirty makefile.  Obviously WWITCH would need to be whatever path
 you've installed to.  But that's all there is to it.
