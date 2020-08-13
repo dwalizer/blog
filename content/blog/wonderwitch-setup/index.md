@@ -86,6 +86,9 @@ a huge deal.  Regardless, here's a version with translations:
 
 ![TransMagic Display Translated](transmagic_translated.png)
 
+This is just a quick translation I've done.  But there's a great, full translation
+available on [Reddit's Wonderswan community](https://amp.reddit.com/r/WonderSwan/comments/i31ha4/wonderwitch_transmagicext_translation_to_english/)
+
 Before we can actually communicate with the device, we're going to have to configure
 the port it communicates over.  This was originally a serial port connection, so we
 have to choose the port.  If you've connected the WonderSwan via the Serial to USB
