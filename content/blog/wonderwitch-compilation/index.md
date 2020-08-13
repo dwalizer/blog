@@ -157,3 +157,5 @@ command is kind of unwieldy, so let's make a quick makefile to automate this.
 
 This is just a quick and dirty makefile.  Obviously WWITCH would need to be whatever path
 you've installed to.  But that's all there is to it.
+
+You can check out the code and the finished **.fx** file for this article on my [GitHub](https://github.com/dwalizer/wonderwitch)
