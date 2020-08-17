@@ -73,3 +73,5 @@ indexed, so line 4 is 3).  Note that I've added spacing to the end of the string
 because it doesn't clear the line before putting new text to it - it overwrites what's there.
 So, I had to add the spacing so that we don't end up with buggy text.  There might be a better
 way to do this, but I'm still figuring things out.
+
+You can find the full code and finished **.fx** file on my [Github](https://github.com/dwalizer/wonderwitch)
