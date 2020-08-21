@@ -91,4 +91,4 @@ text_screen_init();
 ```
 
 In truth, I don't know if this is necessary, but for our purposes, it does clear the screen below what
-we're seeking.  And that's it!  As always, this code is available on [Github](https://github.com/dwalizer/wonderwitch/tree/master/scroll_screen).
+we're seeing.  And that's it!  As always, this code is available on [Github](https://github.com/dwalizer/wonderwitch/tree/master/scroll_screen).
