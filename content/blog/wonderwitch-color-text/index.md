@@ -2,7 +2,7 @@
 title: Using colorful text in WonderWitch
 date: "2020-08-30T16:00:03.284Z"
 description: "Adding a little color to the display"
-tags: ["gaming", "programming"]
+tags: ["gaming", "programming", "c", "wonderswan", "wonderwitch"]
 ---
 
 Next up in this line of articles about the WonderWitch, we're going to add a little color

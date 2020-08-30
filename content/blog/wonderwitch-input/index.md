@@ -2,7 +2,7 @@
 title: Reading button input on WonderWitch
 date: "2020-08-17T11:00:03.284Z"
 description: "How to read button presses on WonderWitch"
-tags: ["gaming", "programming"]
+tags: ["gaming", "programming", "c", "wonderswan", "wonderwitch"]
 ---
 
 Following on from our Hello World example, let's start with something basic - reading user input.

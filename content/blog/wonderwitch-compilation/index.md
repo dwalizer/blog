@@ -2,7 +2,7 @@
 title: Compiling and Running WonderWitch code
 date: "2020-08-12T12:00:03.284Z"
 description: "Getting setup to compile WonderWitch code"
-tags: ["gaming", "programming"]
+tags: ["gaming", "programming", "c", "wonderswan", "wonderwitch"]
 ---
 
 Now that the connection between the WonderSwan and the PC has been established, it's time

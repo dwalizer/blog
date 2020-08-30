@@ -2,7 +2,7 @@
 title: Scrolling the screen in WonderWitch
 date: "2020-08-21T15:00:03.284Z"
 description: "Using the screen_set_scroll function to move the screen"
-tags: ["gaming", "programming"]
+tags: ["gaming", "programming", "c", "wonderswan", "wonderwitch"]
 ---
 
 Today, I wanted to build on the last example of accepting input to do something a little more

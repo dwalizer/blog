@@ -2,7 +2,7 @@
 title: Setting up WonderWitch in 2020
 date: "2020-08-11T02:00:03.284Z"
 description: "How to get started with Wonderswan's homebrew development kit, WonderWitch"
-tags: ["gaming", "programming"]
+tags: ["gaming", "programming", "wonderswan", "wonderwitch"]
 ---
 
 ##What is the WonderSwan?
