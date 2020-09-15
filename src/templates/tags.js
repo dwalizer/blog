@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import moment from "moment";
 // Components
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
+  const tagHeader = `Post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
 
@@ -21,11 +21,13 @@ const Tags = ({ pageContext, data, location }) => {
         <ul>
           {edges.map(({ node }) => {
             const { slug } = node.fields
-            const { title } = node.frontmatter
+            const { title, date } = node.frontmatter
             return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
+              moment(date).diff(moment()) < 0 ?
+                <li key={slug}>
+                  <Link to={slug}>{title}</Link>
+                </li>
+              : null
             )
           })}
         </ul>
@@ -84,6 +86,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date
           }
         }
       }

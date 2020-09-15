@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import moment from "moment";
 
 import MiniBio from "../components/miniBio"
 import Layout from "../components/layout"
@@ -27,7 +28,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <p
+          <div
             style={{
               ...scale(-1 / 5),
               display: `block`,
@@ -35,7 +36,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             }}
           >
             <MiniBio date={post.frontmatter.date} tags={post.frontmatter.tags} />
-          </p>
+          </div>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -64,13 +65,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </Link>
             )}
           </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
+            <li>
+              {next && moment(next.frontmatter.date).diff(moment()) <= 0 ?
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              : null}
+            </li>
         </ul>
       </nav>
     </Layout>

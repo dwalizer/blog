@@ -41,14 +41,14 @@ const MiniBio = (props) => {
         <Image fixed={data.avatar.childImageSharp.fixed} alt={author.name} imgStyle={{ borderRadius: `50%` }}
             style={{ marginRight: rhythm(1 / 2), marginBottom: 0, minWidth: 50, borderRadius: `100%` }} />
       </Link>
-      <p>
+      <div>
         by <strong>{author.nickname}</strong> on {props.date} under
         {_.map(props.tags, tag =>
-              <span style={{paddingRight: "4px", paddingLeft: "4px"}}>
+              <span style={{paddingRight: "4px", paddingLeft: "4px"}} key={tag}>
                 <Link to={"/tags/" + tag}>{tag}</Link>
               </span>
         )}
-      </p>
+      </div>
     </div>
   )
 }

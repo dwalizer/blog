@@ -5,28 +5,12 @@ import PropTypes from "prop-types"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-const TagsPage = ({location }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
-          totalCount
-        }
-      }
-    }
-  `)
-
+const TagsPage = ({data, location }) => {
   return (
     <Layout location={location} title={data.site.siteMetadata.title}>
       <SEO title="Tags" />
@@ -36,7 +20,7 @@ const TagsPage = ({location }) => {
           {data.allMarkdownRemark.group.map(tag => (
             <li key={tag.fieldValue}>
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
+                {tag.fieldValue}
               </Link>
             </li>
           ))}
@@ -65,3 +49,19 @@ TagsPage.propTypes = {
 }
 
 export default TagsPage
+
+export const pageQuery = graphql`
+query {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  allMarkdownRemark(limit: 2000) {
+    group(field: frontmatter___tags) {
+      fieldValue
+      totalCount
+    }
+  }
+}
+`
