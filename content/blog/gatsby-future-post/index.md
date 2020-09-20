@@ -5,6 +5,8 @@ description: "What to do when you want to plan ahead"
 tags: ["react", "gatsby", "programming"]
 ---
 
+**UPDATE: I switched this from using moment to dayjs, since moment is outdated.**
+
 I've been a bit busier recently, and so it's been more beneficial for me to plan ahead for the
 next several days / tasks, and to use my free time to knock several things out at once.  But I
 don't necessarily want to just dump all that work into the world at once.  So, I wanted to make
@@ -12,23 +14,23 @@ it so that I could have blog posts with future dates, that Gatsby would effectiv
 time caught up with those dates.  There's probably an official way to do this somewhere, but I
 thought it would be a fun little exercise to just noodle around with it myself.
 
-First, we'll want to install moment, as that makes working with dates in JavaScript a lot easier.
+First, we'll want to install dayjs, as that makes working with dates in JavaScript a lot easier.
 From our project folder:
 
 ```
-npm install moment
+npm install dayjs
 ```
 
 Once that's done, I first looked at **index.js**.
 
 ```javascript
-import moment from "moment";
+import dayjs from "dayjs";
 ```
 
 Now, the logic is pretty simple.  It'll look something like this.
 
 ```javascript
-moment(article.date).diff(moment()) < 0
+dayjs(article.date).diff(dayjs()) < 0
 ```
 
 Of course, article.date isn't the actual name of our values.  In index.js, we actually need to
@@ -39,7 +41,7 @@ over all the posts, right after the return, we add the logic.
 {posts.map(({ node }) => {
     const title = node.frontmatter.title || node.fields.slug
     return (
-        moment(node.frontmatter.date).diff(moment()) < 0 ?
+        dayjs(node.frontmatter.date).diff(dayjs()) < 0 ?
             <article key={node.fields.slug}>
                 <header>
                   <h3
@@ -75,7 +77,7 @@ Now, in my case, I first tried to reuse the logic, basically the same as it was 
 variable.
 
 ```javascript
-{next && moment(next.frontmatter.date).diff(moment()) <= 0 ?
+{next && dayjs(next.frontmatter.date).diff(dayjs()) <= 0 ?
     <Link to={next.fields.slug} rel="next">
         {next.frontmatter.title} →
     </Link>
@@ -125,14 +127,14 @@ But.  If you clicked one of the tags, the post **still** shows up in the list of
 let's add something similar there, in our tags.js file.
 
 ```javascript
-moment(date).diff(moment()) < 0 ?
+dayjs(date).diff(dayjs()) < 0 ?
     <li key={slug}>
         <Link to={slug}>{title}</Link>
     </li>
 : null
 ```
 
-Be sure to import moment in this component if you haven't already.  Save it and give the
+Be sure to import dayjs in this component if you haven't already.  Save it and give the
 environment a refresh, and now you should see the appropriate posts filtered out.
 
 Now, to be completely honest with you, this is not a very elegant solution, but it was

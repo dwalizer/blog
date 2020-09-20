@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import moment from "moment";
+import dayjs from "dayjs";
 
 import MiniBio from "../components/miniBio"
 import Layout from "../components/layout"
@@ -66,7 +66,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </li>
             <li>
-              {next && moment(next.frontmatter.date).diff(moment()) <= 0 ?
+              {next && dayjs(next.frontmatter.date).diff(dayjs()) <= 0 ?
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>

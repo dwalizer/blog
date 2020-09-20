@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import moment from "moment";
+import dayjs from "dayjs";
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -18,7 +18,7 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
           return (
-            moment(node.frontmatter.date).diff(moment()) < 0 ?
+            dayjs(node.frontmatter.date).diff(dayjs()) < 0 ?
               <article key={node.fields.slug}>
                 <header>
                   <h3
