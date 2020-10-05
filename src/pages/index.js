@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import dayjs from "dayjs";
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -18,7 +17,6 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
           return (
-            dayjs(node.frontmatter.date).diff(dayjs()) < 0 ?
               <article key={node.fields.slug}>
                 <header>
                   <h3
@@ -33,16 +31,13 @@ const BlogIndex = ({ data, location }) => {
                   <small>{node.frontmatter.date}</small>
                 </header>
                 <section>
-                  {dayjs(node.frontmatter.date).diff(dayjs()) < 0 ?
                   <p
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
                     }}
                   />
-                  : null }
                 </section>
               </article>
-            : null
           )
       })}
     </Layout>

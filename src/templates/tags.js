@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import dayjs from "dayjs";
+
 // Components
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
@@ -23,11 +23,9 @@ const Tags = ({ pageContext, data, location }) => {
             const { slug } = node.fields
             const { title, date } = node.frontmatter
             return (
-              dayjs(date).diff(dayjs()) < 0 ?
                 <li key={slug}>
                   <Link to={slug}>{title}</Link>
                 </li>
-              : null
             )
           })}
         </ul>

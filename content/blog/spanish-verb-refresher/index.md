@@ -1,6 +1,6 @@
 ---
 title: Spanish Verb Refresher - Present Tense
-date: "2020-10-05T00:00:03.284Z"
+date: "2020-10-04T00:00:03.284Z"
 description: "Long overdue review of Spanish verb conjugations"
 tags: ["spanish"]
 ---
