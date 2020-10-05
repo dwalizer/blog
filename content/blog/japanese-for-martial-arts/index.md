@@ -1,6 +1,6 @@
 ---
 title: Japanese for Martial Artists
-date: "2020-10-07T07:00:03.284Z"
+date: "2020-10-07T00:00:03.284Z"
 description: "Common terms to help remember technique names"
 tags: ["japanese", "martial arts"]
 ---

@@ -7,6 +7,8 @@ tags: ["react", "gatsby", "programming"]
 
 **UPDATE: I switched this from using moment to dayjs, since moment is outdated.**
 
+**UPDATE 2: I've found some bugs in this!  So, I'll re-work it a bit later.**
+
 I've been a bit busier recently, and so it's been more beneficial for me to plan ahead for the
 next several days / tasks, and to use my free time to knock several things out at once.  But I
 don't necessarily want to just dump all that work into the world at once.  So, I wanted to make

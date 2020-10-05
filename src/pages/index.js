@@ -33,11 +33,13 @@ const BlogIndex = ({ data, location }) => {
                   <small>{node.frontmatter.date}</small>
                 </header>
                 <section>
+                  {dayjs(node.frontmatter.date).diff(dayjs()) < 0 ?
                   <p
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
                     }}
                   />
+                  : null }
                 </section>
               </article>
             : null
