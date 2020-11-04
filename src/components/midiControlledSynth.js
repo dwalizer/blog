@@ -1,14 +1,14 @@
 class MIDIControlledSynth {
 
 	constructor() {
-		let AudioContext = window.AudioContext || window.webkitAudioContext;
+		if(typeof window !== 'undefined') {
+			this.audioContext = new AudioContext();
+			this.oscillator = this.audioContext.createOscillator();
+			this.oscillator.type = "sine";
+			this.oscillator.start();
 
-		this.audioContext = new AudioContext();
-		this.oscillator = this.audioContext.createOscillator();
-		this.oscillator.type = "sine";
-		this.oscillator.start();
-
-		this.initializeMidiAccess();
+			this.initializeMidiAccess();
+		}
 	}
 
 	parseMessage = (message) => {
