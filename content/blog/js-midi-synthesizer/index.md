@@ -30,9 +30,14 @@ oscillators, which can use different waveforms, but right now, we're just going 
 First, obviously, we'll need to create the oscillator, and for that, we need to get the AudioContext.
 
 ```javascript
-let audioContext = new AudioContext();
-let oscillator = audioContext.createOscillator();
+let AudioContext = window.AudioContext || window.webkitAudioContext;
+let audioCtx = new AudioContext();
+let oscillator = audioCtx.createOscillator();
 ```
+
+Depending on your situation, you might not need the first line - I didn't when I was writing this and
+working on it, but my Gatsby build failed when I was just trying to create a new AudioContext.  This is the
+MDN recommended way to achieve cross browser support.
 
 When creating an AudioContext, you might get a message in our console about how it failed to start because
 it needs a user gesture.  This is to prevent autoplaying sounds and what not, so you might need to add
@@ -81,7 +86,7 @@ this work.  Let's make a function to actually play the frequency.
 
 ```javascript
 let playSound = (frequency) => {
-	oscillator.connect(audioContext.destination);
+	oscillator.connect(audioCtx.destination);
 	oscillator.frequency.value = frequency;
 }
 ```
@@ -105,7 +110,7 @@ And on the other side of things, we need to tell the sound to stop when we relea
 ```javascript
 let stopSound = () => {
 	try {
-		oscillator.disconnect(audioContext.destination);
+		oscillator.disconnect(audioCtx.destination);
 	}
 	catch(err) {
 		console.log("Couldn't disconnect");
@@ -138,7 +143,7 @@ for the sake of completeness, we can just write a function and a button like so:
 
 ```javascript
 let resumeMidiInput = () => {
-    midiInput.audioContext.resume();
+    midiInput.audioCtx.resume();
 }
 ```
 

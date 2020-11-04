@@ -1,9 +1,10 @@
 class MIDIControlledSynth {
 
 	constructor() {
+		let AudioContext = window.AudioContext || window.webkitAudioContext;
+
 		this.audioContext = new AudioContext();
 		this.oscillator = this.audioContext.createOscillator();
-		// this.gain = audioContext.createGain();
 		this.oscillator.type = "sine";
 		this.oscillator.start();
 
