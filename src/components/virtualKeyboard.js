@@ -22,19 +22,21 @@ const VirtualKeyboard = () => {
 		{ note: "B", frequency: 493.9}
 	];	
 
-	if(typeof window !== undefined && window.document) {
-		document.onkeydown = (e) => {
-			let buttonCodes = ["KeyA","KeyW","KeyS","KeyE","KeyD","KeyF","KeyT","KeyG","KeyY","KeyH","KeyU","KeyJ"];
-			let buttonCodeIndex = buttonCodes.indexOf(e.code);
+	if(typeof window !== 'undefined') {
+		if(window.document) {
+			document.onkeydown = (e) => {
+				let buttonCodes = ["KeyA","KeyW","KeyS","KeyE","KeyD","KeyF","KeyT","KeyG","KeyY","KeyH","KeyU","KeyJ"];
+				let buttonCodeIndex = buttonCodes.indexOf(e.code);
 
-			if(buttonCodeIndex !== -1) {
-				let selectedKey = keys[buttonCodeIndex];
-				keyPressed(selectedKey.frequency);
+				if(buttonCodeIndex !== -1) {
+					let selectedKey = keys[buttonCodeIndex];
+					keyPressed(selectedKey.frequency);
+				}
 			}
-		}
 
-		document.onkeyup = (e) => {
-			keyReleased();
+			document.onkeyup = (e) => {
+				keyReleased();
+			}
 		}
 	}
 
