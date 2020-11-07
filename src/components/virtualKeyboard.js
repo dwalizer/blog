@@ -22,7 +22,7 @@ const VirtualKeyboard = () => {
 		{ note: "B", frequency: 493.9}
 	];	
 
-	if(typeof document !== undefined) {
+	if(typeof window !== undefined && window.document) {
 		document.onkeydown = (e) => {
 			let buttonCodes = ["KeyA","KeyW","KeyS","KeyE","KeyD","KeyF","KeyT","KeyG","KeyY","KeyH","KeyU","KeyJ"];
 			let buttonCodeIndex = buttonCodes.indexOf(e.code);
