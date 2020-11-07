@@ -3,15 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import MIDIInput from "../components/midiControlledSynth"
-
-let midiInput = new MIDIInput();
+import VirtualKeyboard from "../components/virtualKeyboard"
 
 const Synthesizer = ({location}) => {
-
-  let resumeMidiInput = () => {
-      midiInput.audioContext.resume();
-  }
 
   const data = useStaticQuery(graphql`
     query SynthesizerPageQuery {
@@ -33,7 +27,7 @@ const Synthesizer = ({location}) => {
     return (
         <Layout location={location} title={data.site.siteMetadata.title}>
             <SEO title="JavaScript Synthesizer" />
-            <button onClick={resumeMidiInput}>Enable</button>
+            <VirtualKeyboard />
             <hr style={{marginBottom: "1.75rem;"}} />
         </Layout>
     )

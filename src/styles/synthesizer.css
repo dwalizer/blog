@@ -1,0 +1,19 @@
+#virtual-keyboard {
+	height: 250px;
+}
+
+.key.accidental {
+	height: 100px;
+	border: 1px solid #ffffff;
+	border-top: 1px solid #000000;
+	background-color: #000000;
+	z-index: 2;
+}
+
+.key {
+	height: 200px;
+	width: 50px;
+	border: 1px solid #000000;
+	position: absolute;
+	z-index: 1;
+}
