@@ -20,21 +20,27 @@ const VirtualKeyboard = () => {
 		{ note: "A", frequency: 440},
 		{ note: "A#", accidental: true, frequency: 466.2},
 		{ note: "B", frequency: 493.9}
-	];	
+	];
+
+	let keyboardPressed = false;
 
 	if(typeof window !== 'undefined') {
 		if(window.document) {
 			document.onkeydown = (e) => {
-				let buttonCodes = ["KeyA","KeyW","KeyS","KeyE","KeyD","KeyF","KeyT","KeyG","KeyY","KeyH","KeyU","KeyJ"];
-				let buttonCodeIndex = buttonCodes.indexOf(e.code);
+				if(!keyboardPressed) {
+					keyboardPressed = true;
+					let buttonCodes = ["KeyA","KeyW","KeyS","KeyE","KeyD","KeyF","KeyT","KeyG","KeyY","KeyH","KeyU","KeyJ"];
+					let buttonCodeIndex = buttonCodes.indexOf(e.code);
 
-				if(buttonCodeIndex !== -1) {
-					let selectedKey = keys[buttonCodeIndex];
-					keyPressed(selectedKey.frequency);
+					if(buttonCodeIndex !== -1) {
+						let selectedKey = keys[buttonCodeIndex];
+						keyPressed(selectedKey.frequency);
+					}
 				}
 			}
 
 			document.onkeyup = (e) => {
+				keyboardPressed = false;
 				keyReleased();
 			}
 		}
@@ -54,11 +60,23 @@ const VirtualKeyboard = () => {
 		return (
 			<div>
 				<div id="virtual-keyboard">
+					<div id="oscillator-controls">
+						Type:
+					    <select id="oscillator-type" onChange={(event) => midiInput.setOscillatorType(event.target.value)}>
+							<option value="sine">Sine</option>
+							<option value="triangle">Triangle</option>
+							<option value="square">Square</option>
+							<option value="sawtooth">Sawtooth</option>
+						</select>
+
+						Release:
+						<input type="range" min="0.1" max="2" step="0.1" id="release-slider" onInput={(event) => midiInput.setReleaseTime(event.target.value)} />
+					</div>
 					{keys.map((key, index) => {
 						keyPosition += (index === 5 ? 50 : 25);
 						return (
 							<div onMouseDown={() => keyPressed(key.frequency)} onMouseUp={keyReleased}
-							     onMouseLeave={keyReleased}
+							     onMouseLeave={keyReleased} key={index}
 								 className={"key" + (key.accidental ? " accidental" : "")} 
 								 style={{ left: keyPosition + "px"}}>
 							</div>
