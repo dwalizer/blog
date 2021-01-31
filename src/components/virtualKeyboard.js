@@ -61,16 +61,25 @@ const VirtualKeyboard = () => {
 			<div>
 				<div id="virtual-keyboard">
 					<div id="oscillator-controls">
-						Type:
-					    <select id="oscillator-type" onChange={(event) => midiInput.setOscillatorType(event.target.value)}>
-							<option value="sine">Sine</option>
-							<option value="triangle">Triangle</option>
-							<option value="square">Square</option>
-							<option value="sawtooth">Sawtooth</option>
-						</select>
+						<div>
+							Type:
+							<select id="oscillator-type" onChange={(event) => midiInput.setOscillatorType(event.target.value)}>
+								<option value="sine">Sine</option>
+								<option value="triangle">Triangle</option>
+								<option value="square">Square</option>
+								<option value="sawtooth">Sawtooth</option>
+							</select>
+						</div>
 
-						Release:
-						<input type="range" min="0.1" max="2" step="0.1" id="release-slider" onInput={(event) => midiInput.setReleaseTime(event.target.value)} />
+						<div>
+							Release:
+							<input type="range" min="0.1" max="2" step="0.1" id="release-slider" onInput={(event) => midiInput.setReleaseTime(event.target.value)} />
+						</div>
+
+						<div>
+							Gain:
+							<input type="range" min="0" max="2" step="0.1" id="release-slider" onInput={(event) => midiInput.setGain(event.target.value)} />
+						</div>
 					</div>
 					{keys.map((key, index) => {
 						keyPosition += (index === 5 ? 50 : 25);

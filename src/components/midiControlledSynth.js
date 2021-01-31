@@ -2,12 +2,14 @@ class MIDIControlledSynth {
 
 	#type;
 	#releaseTime;
+	#gain;
 
 	constructor() {
 		if(typeof window !== 'undefined') {
 			this.oscillatorTypes = [ "sine", "square", "triangle", "sawtooth" ];
 			this.#type = "sine";
 			this.#releaseTime = 0.1;
+			this.#gain = 1;
 			this.audioContext = new AudioContext();
 			this.initializeMidiAccess();
 		}
@@ -25,6 +27,7 @@ class MIDIControlledSynth {
 		this.oscillator = this.audioContext.createOscillator();
 		this.oscillator.type = this.#type;
 		this.gain = this.audioContext.createGain();
+		this.gain.gain.value = this.#gain;
 		this.oscillator.connect(this.gain);			
 		this.oscillator.start();		
 	}
@@ -41,6 +44,13 @@ class MIDIControlledSynth {
 			this.#releaseTime = parseFloat(time);
 		}
 	}
+
+	setGain(gain) {
+		if(gain >= 0) {
+			this.stopSound();
+			this.#gain = parseFloat(gain);
+		}
+	}	
 
 	parseMessage = (message) => {
 		return {
@@ -93,7 +103,9 @@ class MIDIControlledSynth {
 
 	stopSound = () => {
 		try {
-			this.gain.gain.exponentialRampToValueAtTime(0.0001, this.audioContext.currentTime + this.#releaseTime);
+			if(this.gain) {
+				this.gain.gain.exponentialRampToValueAtTime(0.0001, this.audioContext.currentTime + this.#releaseTime);
+			}
 		}
 		catch(err) {
 			console.log("Couldn't disconnect");
