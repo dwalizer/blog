@@ -54,6 +54,8 @@ const Layout = ({ location, title, children }) => {
       <div className="top-header">
           <Link to="/">Home</Link>
           <span className="floating-links">
+            <a href="https://www.youtube.com/channel/UC9S_T-7_LuqWTIW4uF_9D4Q">Youtube</a>
+            <a href="https://uopmusic.bandcamp.com">Bandcamp</a>
             <a href="https://github.com/dwalizer">GitHub</a>
             <Link to="/about/">About Me</Link>
           </span>
