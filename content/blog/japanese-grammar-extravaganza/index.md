@@ -1,5 +1,5 @@
 ---
-title: Japanese Grammar Extravaganza!
+title: Japanese Grammar Recap
 date: "2020-11-22T18:30:03.284Z"
 description: "Catching up on recently studied grammar"
 tags: ["japanese"]
